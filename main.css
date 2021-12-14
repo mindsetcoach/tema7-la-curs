@@ -1,0 +1,9 @@
+#mainDiv > div {
+    display: flex;
+}
+.child {
+    border: 1px solid red;
+    padding: 3px;
+
+}
+.c
