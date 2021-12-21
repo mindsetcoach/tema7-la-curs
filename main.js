@@ -1,7 +1,25 @@
-let userInput = prompt("Enter your number!");
-
+let isNumberCorrect;
+let userNumber;
 let parentArray = [];
-let userNumber = parseInt(userInput);
+
+do {
+    isNumberCorrect = true;
+    let userInput = prompt("Enter your number between 1 and 9");
+    if (userInput.length !== 1) {
+        isNumberCorrect = false;
+    } else {
+        userNumber = parseInt(userInput);
+        if (isNaN(userNumber)) {   
+            isNumberCorrect = false;
+        } else if (userNumber === 0) {
+            isNumberCorrect = false;
+        }
+    } 
+    if (isNumberCorrect === false) {
+        alert("You didn't enter a number between 1 and 9");
+    }
+} while (!isNumberCorrect);
+
 let mainDivElement = document.getElementById('mainDiv');
 
 for ( let i=0 ; i<userNumber ; i= i+1 ) {
@@ -17,7 +35,7 @@ for ( let i=0 ; i<userNumber ; i= i+1 ) {
             childDiv.innerHTML = theRandomNumber;
         }
         else {
-            childDiv.innerHTML = "0";
+            childDiv.innerHTML = theRandomNumber;
             childDiv.style.color = "white";
         }
         lineDiv.appendChild(childDiv);
